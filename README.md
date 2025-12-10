@@ -5,10 +5,15 @@ The CaseStudyCODE.ipynb includes data cleaning, missing value treatment, outlier
 
 Project Files:
 📁 credit-risk-analysis/
- ┣ 📓 CaseStudyCODE.ipynb                            → Main notebook with all analysis
+
+ ┣ 📓 CaseStudyCODE.ipynb   → Main notebook with all analysis
+ 
  ┣ 📓 REPORT OF THE CASE STUDY.pdf    → Report covering statistical analysis 
+ 
  ┣ 📓 requirement.txt                                         → Report covering statistical analysis
+ 
  ┣ 📁 data                                                           → Place your dataset here
+ 
  ┗ 📜 README.md                                          → Project documentation
 
 1. Project overview
