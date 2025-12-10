@@ -17,7 +17,7 @@ Project Files:
  ┗ 📜 README.md                                          → Project documentation
 
 1. Project overview
-The goal of this analysis is to
+The goal of this analysis is to\n
 •	Clean and prepare the data
 •	Analyze relationships between variables
 •	Validate insights using statistical testing
