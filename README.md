@@ -1,82 +1,95 @@
-Consumer-Lending-Risk-Insights
 
-This repository contains a complete Exploratory Data Analysis (EDA) workflow performed on the Credit Risk Previous Loans dataset.
-The CaseStudyCODE.ipynb includes data cleaning, missing value treatment, outlier removal, feature engineering, visualization, and statistical hypothesis testing.
+---
 
-Project Files:
-📁 credit-risk-analysis/
+##  1. Project Overview
+The goal of this analysis is to:
 
- ┣ 📓 CaseStudyCODE.ipynb   → Main notebook with all analysis
- 
- ┣ 📓 REPORT OF THE CASE STUDY.pdf    → Report covering statistical analysis 
- 
- ┣ 📓 requirement.txt                                         → Report covering statistical analysis
- 
- ┣ 📁 data                                                           → Place your dataset here
- 
- ┗ 📜 README.md                                          → Project documentation
+- Clean and prepare the dataset  
+- Analyze relationships between key variables  
+- Validate findings using statistical hypothesis testing  
+- Engineer meaningful features for future predictive modelling  
 
-1. Project overview
-The goal of this analysis is to
+---
 
-•	Clean and prepare the data
-•	Analyze relationships between variables
-•	Validate insights using statistical testing
-•	Prepare the dataset for predictive modelling.
+##  2. Data Loading
 
-3. Data loading
-   
-The dataset is loaded using:
- Initial inspection was performed using:
- 
-•	df.head()
-•	df.shape
-•	df.info()
-•	df.describe()
+Initial data exploration included:  
+- `df.head()`  
+- `df.shape`  
+- `df.info()`  
+- `df.describe()`  
 
-5. Data cleaning
-a)	Missing Values
-•	Calculated missing percentages.
-•	Dropped columns with >40% missing values.
-•	Fill null values:
-o	Numeric columns → median
-o	Categorical columns → mode
+---
 
- b)	Incorrect Values
- •	Converted negative day values to absolute using .abs().
- •	Added YEARS_DECISION column for better interpretation.
- After cleaning, 100% of missing values were handled.
+##  3. Data Cleaning
 
-4. Outlier detection & removal
+### a) Missing Values
+- Calculated and analyzed missing value percentages  
+- Dropped columns with **more than 40% missing values**  
+- Filled missing values using:  
+  - **Numeric columns → Median**  
+  - **Categorical columns → Mode**
 
-Used IQR (Inter Quartile Range) Method:
-cols_outliers is a list of column names where remove outliers.
-Q1 calculates the 25th percentile (column value).
-Q3 calculates the 75th percentile (column value).
-lower is lower bound of that column
-upper is upper bound of that column
-df takes only that rows where the value is between lower and upper bound.
+### b) Incorrect Values
+- Converted negative day values using `.abs()`  
+- Added **YEARS_DECISION** feature for easier interpretation  
 
-6. Feature Engineering
+✔ After cleaning, **100% of missing values were handled**
 
-New features added:
-Feature	Description
-CREDIT_ANNUITY_RATIO	Ratio of approved credit to annuity
-APPLICATION_CREDIT_RATIO	How close application amount is to approved credit
-IS_REFUSED	Binary flag for refused loans
-IS_APPROVED	Binary flag for approved loans
+---
+
+##  4. Outlier Detection & Removal
+
+Outliers were removed using the **Interquartile Range (IQR)** method:
+
+- `Q1` → 25th percentile  
+- `Q3` → 75th percentile  
+- `lower = Q1 - 1.5 * IQR`  
+- `upper = Q3 + 1.5 * IQR`  
+- Rows outside the bounds were filtered out  
+
+---
+
+##  5. Feature Engineering
+
+| Feature | Description |
+|--------|-------------|
+| **CREDIT_ANNUITY_RATIO** | Ratio of approved credit to annuity |
+| **APPLICATION_CREDIT_RATIO** | How close application amount is to approved credit |
+| **IS_REFUSED** | Binary flag for refused loans |
+| **IS_APPROVED** | Binary flag for approved loans |
+
+---
+
+##  6. Exploratory Data Analysis (EDA)
+
+Visualizations included:
+
+- Histograms + KDE plots  
+- Boxplots  
+- Countplots  
+- Scatterplots  
+- Correlation heatmap  
+
+---
+
+##  7. Statistical Hypothesis Testing
+
+Performed to validate observed patterns:
+
+### a) **Chi-Square Test**
+Used to identify relationships between **categorical variables**
+
+### b) **Two-Sample T-Test**
+Compared means between different **customer groups**
+
+---
+
+##  Summary
+
+This project provides a full EDA pipeline including data preparation, visualization, outlier treatment, feature generation, and hypothesis validation — preparing the dataset for further machine learning modeling.
+
+---
 
 
-8. Exploratory Data Analysis (EDA)
 
-In EDA visualization is done and visualization include:
-•	Histograms + KDE
-•	Boxplots
-•	Countplots
-•	Scatterplots
-•	Correlation heatmap
-
-10. Statistical Hypothesis Testing
-Performed to validate findings:
-a)	Chi-Square Tests : Categorical relationships.
-b)	Two-sample T-Test : Mean comparison between customer groups.
