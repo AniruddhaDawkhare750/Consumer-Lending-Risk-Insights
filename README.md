@@ -34,12 +34,11 @@ The dataset is loaded using:
 4. Data cleaning
 a)	Missing Values
 •	Calculated missing percentages.
- 
 •	Dropped columns with >40% missing values.
-•	 
 •	Fill null values:
 o	Numeric columns → median
 o	Categorical columns → mode
+
 b)	Incorrect Values
 •	Converted negative day values to absolute using .abs().
 •	Added YEARS_DECISION column for better interpretation.
@@ -47,7 +46,6 @@ After cleaning, 100% of missing values were handled.
 
 4. Outlier detection & removal
 Used IQR (Inter Quartile Range) Method:
- 
 cols_outliers is a list of column names where remove outliers.
 Q1 calculates the 25th percentile (column value).
 Q3 calculates the 75th percentile (column value).
@@ -75,16 +73,3 @@ In EDA visualization is done and visualization include:
 Performed to validate findings:
 a)	Chi-Square Tests : Categorical relationships.
 b)	Two-sample T-Test : Mean comparison between customer groups.
-
-
-
-
-
-
-
-
-•	
-•	
-•	
-•	
-
